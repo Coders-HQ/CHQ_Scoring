@@ -53,8 +53,6 @@ class CHQScore:
 
     # per repo
     current_user_id = user.id
-    if self.auth is not None:
-      before_calls = user.raw_headers['x-ratelimit-used']
 
     for repo in user.get_repos():
 
