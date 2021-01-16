@@ -11,6 +11,13 @@ class CHQScore:
     else:
       self.g = Github()
 
+  def check_user_exists(self, user_name):
+    try:
+      user = self.g.get_user(user_name)
+      return True
+    except:
+      return False
+
   def get_score(self, user_name):
     user = self.g.get_user(user_name)
 
