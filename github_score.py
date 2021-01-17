@@ -12,6 +12,10 @@ class CHQScore:
       self.g = Github()
 
   def check_user_exists(self, user_name):
+    """
+    Tries to get user info, returns true if
+    call succeeds, else, false
+    """
     try:
       user = self.g.get_user(user_name)
       return True
@@ -19,9 +23,14 @@ class CHQScore:
       return False
 
   def get_score(self, user_name):
+    """
+    Gets github API score
+    """
+
+    # user data
     user = self.g.get_user(user_name)
 
-    # modifiers
+    ## modifiers
 
     # class modifiers
     m_high=3
